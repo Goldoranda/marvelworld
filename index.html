@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Marvel Worldwide</title>
+  <base href="/marvelworld/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/css/lightgallery.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/marvelworld/assets/css/emojionearea.min.css" />
+</head>
+<body>
+<app-root></app-root>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+<script type="text/javascript" src="/marvelworld/assets/js/emojionearea.min.js"></script>
+<script type="text/javascript" src="/marvelworld/assets/js/custom.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$("#emojionearea1").emojioneArea({
+    pickerPosition: "left",
+    tonesStyle: "bullet"
+  });
+	$(".lastImgthumb:after").click(function(){
+	  $(this).parents(".firstImg").trigger("click");
+	});
+
+  $('.ImagesGallery').lightGallery(); 
+
+  $(".showCount").click(function(){
+    $(this).prev(".ImagesGallery").find("a:nth-child(4)").trigger("click");
+  });
+
+  var number = $(".ImagesGallery a").length;
+  $(".showCount span").html('+'+ number);
+
+  $(".click_toCopy").click(function() { 
+    $(this).next(".CopyUrl").toggleClass("d-none");
+    var t = $(this).attr('id'); 
+    $(this).next('.CopyUrl').find('.url').text(window.location + "#" + t); 
+    $(this).next('.CopyUrl').find('.url').focus(function() { $(this).select();
+    });
+  }); 
+});
+</script>
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="es2015-polyfills.js" nomodule></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
+</html>
