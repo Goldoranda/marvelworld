@@ -25,9 +25,14 @@ $("#emojionearea1").emojioneArea({
     pickerPosition: "left",
     tonesStyle: "bullet"
   });
-	$(".lastImgthumb:after").click(function(){
-	  $(this).parents(".firstImg").trigger("click");
-	});
+	
+  $(".socialshareOptions .shareIt").click(function(){
+    $(this).toggleClass("active");
+  });
+	
+  $(".lastImgthumb:after").click(function(){
+    $(this).parents(".firstImg").trigger("click");
+  });
 
   $('.ImagesGallery').lightGallery(); 
 
